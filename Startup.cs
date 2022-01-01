@@ -36,7 +36,7 @@ namespace Auth_JWT
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Auth_JWT", Version = "v1" });
             });
 
-            // Start => Auth - JWT
+            #region Auth
             var key = Encoding.ASCII.GetBytes(Settings.Secret);
             services.AddAuthentication(x => //Informando ao Asp.Net que estamos utilizando a autenticação, e para isto utilizamos o recurso AddAuthentication no método ConfigureServices do Startup.cs
             {
@@ -56,7 +56,7 @@ namespace Auth_JWT
                     ValidateAudience = false
                 };
             });
-            //End => Auth -JWT
+            #endregion
 
         }
 
